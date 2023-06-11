@@ -1,6 +1,6 @@
 export interface IParameter {
-    orderBy?: string;
-    page?: number;
-    pageSize?: number;
-    q?: string;
+  orderBy?: string;
+  page?: number;
+  pageSize?: number;
+  q?: string;
 }

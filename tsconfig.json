@@ -1,18 +1,27 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
+    "allowJs": true,
+    "baseUrl": ".",
     "declaration": true,
-    "outDir": "./dist",
-    "sourceMap": true,
     "experimentalDecorators": true,
-    "lib": ["ES6"]
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2019"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "paths": {
+      "~/*": ["./src/*"],
+      "~/client": ["./src/client"],
+      "~/emums/*": ["./src/enums/*"],
+      "~/interfaces/*": ["./src/interfaces/*"],
+      "~/sdk": ["./src/sdk"],
+      "~/services/*": ["./src/services/*"]
+    },
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2019"
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "test"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "test/*.test.ts"]
 }

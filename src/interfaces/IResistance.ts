@@ -1,3 +1,3 @@
-import { IStats } from "./IStats";
+import { IStats } from './IStats';
 
-export type IResistance = IStats
+export type IResistance = IStats;

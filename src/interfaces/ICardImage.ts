@@ -1,4 +1,4 @@
 export interface ICardImage {
-    large: string;
-    small: string;
+  large: string;
+  small: string;
 }

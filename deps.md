@@ -1,0 +1,1 @@
+yarn add --dev @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier jest prettier ts-jest ts-node typescript cz-conventional-changelog is-ci commitizen commitlint @commitlint/config-conventional eslint-plugin-prefer-arrow-functions --exact
