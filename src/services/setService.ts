@@ -1,6 +1,6 @@
-import { Client } from '~/client';
-import { IParameter } from '~/interfaces/IParameter';
-import { ISet } from '~/interfaces/ISet';
+import { Client } from '../client';
+import { IParameter } from '../interfaces/IParameter';
+import { ISet } from '../interfaces/ISet';
 
 export const findSetByID = async (id: string): Promise<ISet> => {
   const client: Client = Client.getInstance();

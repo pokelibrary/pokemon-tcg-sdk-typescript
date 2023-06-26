@@ -1,27 +1,29 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "declaration": true,
+    "declarationDir": "dist",
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["DOM", "DOM.Iterable", "ES2019"],
+    "lib": ["ES6", "DOM", "ES2016", "ES2017"],
     "module": "CommonJS",
     "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": "./dist",
-    "paths": {
-      "~/*": ["./src/*"],
-      "~/client": ["./src/client"],
-      "~/emums/*": ["./src/enums/*"],
-      "~/interfaces/*": ["./src/interfaces/*"],
-      "~/sdk": ["./src/sdk"],
-      "~/services/*": ["./src/services/*"]
-    },
+    "removeComments": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "ES2019"
+    "strictNullChecks": true,
+    "target": "ESNext"
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "test/*.test.ts"]
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"]
 }

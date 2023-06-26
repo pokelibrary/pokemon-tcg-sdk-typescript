@@ -1,16 +1,13 @@
-import type { ICard, IParameter } from '~/sdk';
+import type { ICard, IParameter } from '../src/interfaces';
 import {
-  Rarity,
-  Subtype,
-  Supertype,
-  Type,
   findCardByID,
   findCardsByQueries,
   getRarities,
   getSubtypes,
   getSupertypes,
   getTypes,
-} from '~/sdk';
+} from '../src/sdk';
+import { Rarity, Subtype, Supertype, Type } from '../src/types';
 
 describe('Card Service', () => {
   it('should get a single card using query parameters', async () => {

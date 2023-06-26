@@ -1,17 +1,17 @@
-import { Rarity } from '../enums/Rarity';
-import { Subtype } from '../enums/Subtype';
-import { Supertype } from '../enums/Supertype';
-import { Type } from '../enums/Type';
+import type { Rarity } from '../enums/Rarity';
+import type { Subtype } from '../enums/Subtype';
+import type { Supertype } from '../enums/Supertype';
+import type { Type } from '../enums/Type';
 
-import { IAbility } from './IAbility';
-import { IAncientTrait } from './IAncientTrait';
-import { IAttack } from './IAttack';
-import { ICardImage } from './ICardImage';
-import { ILegality } from './ILegality';
-import { IResistance } from './IResistance';
-import { ISet } from './ISet';
-import { ITCGPlayer } from './ITCGPlayer';
-import { IWeakness } from './IWeakness';
+import type { IAbility } from './IAbility';
+import type { IAncientTrait } from './IAncientTrait';
+import type { IAttack } from './IAttack';
+import type { ICardImage } from './ICardImage';
+import type { ILegality } from './ILegality';
+import type { IResistance } from './IResistance';
+import type { ISet } from './ISet';
+import type { ITCGPlayer } from './ITCGPlayer';
+import type { IWeakness } from './IWeakness';
 
 export interface ICard {
   abilities?: IAbility[];

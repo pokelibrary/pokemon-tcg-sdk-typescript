@@ -6,7 +6,33 @@
 This is the TypeScript SDK for the [Pokémon Trading Card Game API](https://docs.pokemontcg.io).
 
 > The original SDK project seems abandoned some years already. In order to have a cleaner repository I decided not to fork the old project, but to start a ne repository.
-> But credits to [the original project](https://github.com/PokemonTCG/pokemon-tcg-sdk-typescript) as well as all it's contributors (whose names are still mentioned here in the contributors ection!).
+> But credits to [the original project](https://github.com/PokemonTCG/pokemon-tcg-sdk-typescript) as well as all it's contributors (whose names are still mentioned here in the contributors section!).
+
+# Table of Contents
+
+<!-- TOC -->
+
+- [Pokémon TCG TypeScript SDK](#pokémon-tcg-typescript-sdk)
+- [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Usage](#usage)
+    - [Card Methods](#card-methods)
+      - [findCardByID()](#findcardbyid)
+      - [findCardByQueries()](#findcardbyqueries)
+      - [getAllCards()](#getallcards)
+      - [getTypes()](#gettypes)
+      - [getSupertypes()](#getsupertypes)
+      - [getSubtypes()](#getsubtypes)
+      - [getRarities()](#getrarities)
+    - [Set Methods](#set-methods)
+      - [findSetByID()](#findsetbyid)
+      - [findSetByQueries()](#findsetbyqueries)
+      - [getAllSets()](#getallsets)
+  - [Contributing](#contributing)
+    - [Setup](#setup)
+
+<!-- /TOC -->
 
 ## Installation
 
@@ -18,12 +44,12 @@ This is the TypeScript SDK for the [Pokémon Trading Card Game API](https://docs
 
     yarn add @pokelib/pokemon-tcg-sdk-typescript
 
-# Configuration
+## Configuration
 
 The SDK works out of the box! Simply import the SDK, and you're ready to go:
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
 PokemonTCG.findCardByID('xy7-54').then((card: PokemonTCG.Card) => {
   console.log(card.name); // Gardevoir
@@ -36,145 +62,122 @@ To use the SDK with an API key, create an account at https://dev.pokemontcg.io t
 Then set your API key to the environment variable `POKEMONTCG_API_KEY` in a `.env` file.
 **Make sure to use this exact environment variable, otherwise the SDK will not be able to read the API key.**
 
-# Usage
+## Usage
 
 All function calls return generic promises like `Promise<T>` or `Promise<T[]>`
 
-## Card Methods
+### Card Methods
 
-- [Pokémon TCG TypeScript SDK](#pokémon-tcg-typescript-sdk)
-  - [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-  - [Card Methods](#card-methods)
-  - [Set Methods](#set-methods)
-    - [findCardByID()](#findcardbyid)
-    - [findCardByQueries()](#findcardbyqueries)
-    - [getAllCards()](#getallcards)
-    - [getTypes()](#gettypes)
-    - [getSupertypes()](#getsupertypes)
-    - [getSubtypes()](#getsubtypes)
-    - [getRarities()](#getrarities)
-    - [findSetByID()](#findsetbyid)
-    - [findSetByQueries()](#findsetbyqueries)
-    - [getAllSets()](#getallsets)
-  - [Contributing](#contributing)
-    - [Setup](#setup)
-
-## Set Methods
-
-- [findSetByID()](#findsetbyid)
-- [findSetsByQueries()](#findsetbyqueries)
-- [getAllSets()](#getallsets)
-
-### findCardByID()
+#### findCardByID()
 
 Returns a single Pokémon card given an ID.
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
-PokemonTCG.findCardByID('xy7-54').then((card: PokemonTCG.Card) => {
+PokemonTCG.findCardByID('xy7-54').then((card: PokemonTCG.ICard) => {
   console.log(card.name); // Gardevoir
 });
 ```
 
-### findCardByQueries()
+#### findCardByQueries()
 
 Returns an array of cards filtered through a search query.
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
-const params: PokemonTCG.Query[] = { q: 'id:xy7-54' };
+const params: PokemonTCG.IParameter = { q: 'id:xy7-54' };
 
-PokemonTCG.findCardsByQueries(params).then((cards: PokemonTCG.Card[]) => {
+PokemonTCG.findCardsByQueries(params).then((cards: PokemonTCG.ICard[]) => {
   console.log(card[0].name); // Gardevoir
 });
 ```
 
-### getAllCards()
+#### getAllCards()
 
 Returns all Pokémon cards available through recursive pagination.
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
 PokemonTCG.getAllCards();
 ```
 
-### getTypes()
+#### getTypes()
 
 Returns all Energy Types
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
 PokemonTCG.getTypes();
 ```
 
-### getSupertypes()
+#### getSupertypes()
 
 Returns all Super Types
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
 PokemonTCG.getSupertypes();
 ```
 
-### getSubtypes()
+#### getSubtypes()
 
 Returns all Sub Types
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
 PokemonTCG.getSubtypes();
 ```
 
-### getRarities()
+#### getRarities()
 
 Returns all card Rarities
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
 PokemonTCG.getRarities();
 ```
 
-### findSetByID()
+### Set Methods
+
+#### findSetByID()
 
 Returns a single Pokémon card given an ID.
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
-PokemonTCG.findSetByID('base1').then((set: PokemonTCG.Set) => {
+PokemonTCG.findSetByID('base1').then((set: PokemonTCG.ISet) => {
   console.log(set.name); // Base
 });
 ```
 
-### findSetByQueries()
+#### findSetByQueries()
 
 Returns an array of cards filtered through a search query.
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
-const params: PokemonTCG.Query[] = { q: 'name:Base' };
+const params: PokemonTCG.IParameter = { q: 'name:Base' };
 
-PokemonTCG.findSetsByQueries(params).then((sets: PokemonTCG.Set[]) => {
+PokemonTCG.findSetsByQueries(params).then((sets: PokemonTCG.ISet[]) => {
   console.log(sets[0].name); // Base
 });
 ```
 
-### getAllSets()
+#### getAllSets()
 
 Returns all Pokémon sets available through recursive pagination.
 
 ```typescript
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
+import { PokemonTCG } from '@pokelib/pokemon-tcg-sdk-typescript';
 
 PokemonTCG.getAllSets();
 ```
@@ -189,13 +192,13 @@ ESLint and Prettier are used to enforce a consistent coding style.
 Raring to code your heart out? Awesome! Here's how to get started:
 
 1. Open and issue with a bug or feature. Ensure the change is not already being worked on.
-2. Fork and clone the repository from the `master` branch.
-3. Create a feature branch.
+2. Fork and clone the repository from the `main` branch.
+3. Create a feat00ure branch.
 4. Run `npm ci` to install exact versions specified in the `package-lock.json`.
 5. Code your heart out!
 6. Run `npm run test` to run ESLint and Jest tests.
 7. (OPTIONAL) Test your changes in a project of yours:
    1. Create a link with `npm` or `yarn` (depending on what tool you installed this SDK with)
-   2. In your project that uses the SDK, install the linked package with `yarn/npm link pokemon-tcg-sdk-typescript`
+   2. In your project that uses the SDK, install the linked package with `yarn/npm link @pokelib/pokemon-tcg-sdk-typescript`
    3. Verify the SDK behaves as expected, and your changes took effect
-8. Submit a [pull request](https://github.com/PokemonTCG/pokemon-tcg-sdk-typescript/compare)! 🎉
+8. Submit a [pull request](https://github.com/pokelibrary/pokemon-tcg-sdk-typescript/compare)! 🎉

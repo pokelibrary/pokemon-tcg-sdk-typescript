@@ -1,5 +1,5 @@
-import type { IParameter, ISet } from '~/sdk';
-import { findSetByID, findSetsByQueries, getAllSets } from '~/sdk';
+import type { IParameter, ISet } from '../src/interfaces';
+import { findSetByID, findSetsByQueries, getAllSets } from '../src/sdk';
 
 describe('Set Service', () => {
   it('should get a single set using query parameters', async () => {

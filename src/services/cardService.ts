@@ -1,10 +1,10 @@
-import { Client } from '~/client';
-import { Rarity } from '~/enums/Rarity';
-import { Subtype } from '~/enums/Subtype';
-import { Supertype } from '~/enums/Supertype';
-import { Type } from '~/enums/Type';
-import { ICard } from '~/interfaces/ICard';
-import { IParameter } from '~/interfaces/IParameter';
+import { Client } from '../client';
+import { Rarity } from '../enums/Rarity';
+import { Subtype } from '../enums/Subtype';
+import { Supertype } from '../enums/Supertype';
+import { Type } from '../enums/Type';
+import { ICard } from '../interfaces/ICard';
+import { IParameter } from '../interfaces/IParameter';
 
 const paginateAllCards = async (
   pageNumber: number,

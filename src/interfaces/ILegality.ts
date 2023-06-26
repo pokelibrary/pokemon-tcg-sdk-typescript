@@ -1,4 +1,4 @@
-import { Legality } from '../enums/Legality';
+import type { Legality } from '../enums/Legality';
 
 export interface ILegality {
   expanded?: Legality;
