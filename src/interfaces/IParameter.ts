@@ -3,4 +3,5 @@ export interface IParameter {
   page?: number;
   pageSize?: number;
   q?: string;
+  select?: string;
 }
