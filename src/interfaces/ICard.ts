@@ -39,4 +39,6 @@ export interface ICard {
   tcgplayer?: ITCGPlayer;
   types?: Type[];
   weaknesses?: IWeakness[];
+  level?: string;
+  regulationMark?: string;
 }
