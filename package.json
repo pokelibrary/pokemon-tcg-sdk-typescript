@@ -1,6 +1,6 @@
 {
   "name": "@pokeyala/pokemon-tcg-sdk-typescript",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "description": "Typescript SDK for the PokemonTCG API (https://pokemontcg.io)",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github:pokeyala/pokemon-tcg-sdk-typescript"
+    "url": "git+https://github.com/pokeyala/pokemon-tcg-sdk-typescript.git"
   },
   "contributors": [
     "Manuel Bachl (https://github.com/manuelbachl)",
@@ -72,5 +72,13 @@
   ],
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/pokeyala/pokemon-tcg-sdk-typescript/issues"
+  },
+  "homepage": "https://github.com/pokeyala/pokemon-tcg-sdk-typescript#readme",
+  "directories": {
+    "test": "test"
+  },
+  "author": "PokeYala"
 }
